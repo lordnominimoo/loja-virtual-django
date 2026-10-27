@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block 'titulo' %} Maison Atelier {% endblock 'titulo' %}
+
+{% block 'conteudo' %}
+
+<form method="POST", enctype="multipart/form-data">
+        {% csrf_token %}
+    <table>
+        {{form.as_table}}
+        
+    </table>
+
+    
+    <button type="submit">Eviar</button>
+</form>
+{% endblock 'conteudo' %}

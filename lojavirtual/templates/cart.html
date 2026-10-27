@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sacola · Maison Atelier</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-whatsapp="5511999999999"
+      data-shipping="15"
+      data-free-shipping-above="250">
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">Maison Atelier</a>
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Catálogo</a>
+        <a href="cart.html" class="cart-link" aria-label="Sacola">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/>
+            <path d="M3 6h18"/>
+            <path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+          <span id="cart-count" class="cart-badge hidden">0</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container cart-main">
+    <h1 class="cart-title">Sua sacola</h1>
+
+    <div class="cart-page">
+      <div id="cart-items" class="cart-items">
+        <!-- itens renderizados pelo JS a partir do localStorage -->
+      </div>
+
+      <aside class="resumo">
+        <h3>Resumo</h3>
+        <div class="linha"><span>Subtotal</span><span id="sum-subtotal">R$ 0,00</span></div>
+        <div class="linha" id="sum-discount-row" hidden>
+          <span>Cupom (<span id="sum-coupon-code"></span>)</span>
+          <span id="sum-discount">-R$ 0,00</span>
+        </div>
+        <div class="linha"><span>Frete</span><span id="sum-shipping">Grátis</span></div>
+
+        <div class="cupom">
+          <input type="text" id="cupom-input" placeholder="Cupom de desconto" />
+          <button type="button" id="cupom-apply">Aplicar</button>
+        </div>
+
+        <div class="linha total"><span>Total</span><span id="sum-total">R$ 0,00</span></div>
+
+        <button type="button" id="checkout-btn" class="checkout-btn">Finalizar via WhatsApp</button>
+        <a href="index.html" class="continue-btn">Continuar comprando</a>
+      </aside>
+    </div>
+
+    <div id="cart-empty" class="cart-empty" hidden>
+      <p>Sua sacola está vazia.</p>
+      <a href="index.html" class="continue-btn">Ver catálogo</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container"><p>© 2025 Maison Atelier</p></div>
+  </footer>
+
+  <div id="toast" class="toast" hidden></div>
+  <script src="js/main.js"></script>
+</body>
+</html>
